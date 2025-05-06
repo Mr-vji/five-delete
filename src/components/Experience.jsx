@@ -1,4 +1,12 @@
-import { Environment, Float, Gltf, OrbitControls, PresentationControls, Stars, Text } from "@react-three/drei";
+import {
+   Environment,
+   Float,
+   Gltf,
+   OrbitControls,
+   PresentationControls,
+   Stars,
+   Text,
+} from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { useRef } from "react";
 import { StarrySky } from "./StarrySky";
@@ -12,34 +20,37 @@ import { Cur } from "./cur";
 // "Low Poly Winter Scene" (https://skfb.ly/6R6MM) by EdwiixGG is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
 
 export const Experience = () => {
-  const light = useRef();
+   const light = useRef();
 
-  const ncolor = new Color('white')
-  ncolor.addScalar(-0.1)
+   const ncolor = new Color("white");
+   ncolor.addScalar(-0.1);
 
-  const yescaColor = new Color('blue')
-  yescaColor.addScalar(0.8)
+   const yescaColor = new Color("blue");
+   yescaColor.addScalar(0.8);
 
+   return (
+      <>
+         {/* <StarrySky /> */}
+         {/* <Starss /> */}
 
-  return (
-    <>
-      {/* <StarrySky /> */}
-      <Starss />
-
-      <Float intensity={10}>
+         {/* <Float intensity={10}>
         <Snow npParticles={30} />
-      </Float>
+      </Float> */}
+         <mesh>
+            <sphereGeometry />
+            <meshNormalMaterial />
+         </mesh>
 
-      {/* <OrbitControls
+         {/* <OrbitControls
         minDistance={3}
         maxDistance={12}
         enablePan={false}
         maxPolarAngle={Math.PI / 2}
       /> */}
 
-      <Environment preset="studio" />
+         <Environment preset="studio" />
 
-      <PresentationControls
+         {/* <PresentationControls
         global
         rotation={[0.13, 0.1, 0]}
         polar={[- 11, 11]}
@@ -50,10 +61,9 @@ export const Experience = () => {
         <Float>
           <Perfum scale={1.5} />
         </Float>
-      </PresentationControls>
+      </PresentationControls> */}
 
-
-      <Text
+         {/* <Text
         scale={0.45}
         lineHeight={0.9}
         rotation={[0, 0, Math.PI / 2]}
@@ -88,19 +98,14 @@ export const Experience = () => {
       <ambientLight intensity={0.8} />
       {/* <directionalLight color={'white'} position={[0, 2, 10]} Bloom intensity={100} /> */}
 
-      <fog attach="fog" args={["black", 20, 50]} />
+         {/* <fog attach="fog" args={["black", 20, 50]} />
 
 
       <EffectComposer>
         <Bloom mipmapBlur intensity={1.5} />
       </EffectComposer>
 
-      <Cur />
-
-
-    </>
-  );
+      <Cur /> */}
+      </>
+   );
 };
-
-
-
